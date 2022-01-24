@@ -1,0 +1,21 @@
+name: salt_unflooding
+channels:
+  - pytorch 
+  - defaults
+  - conda-forge
+dependencies:
+  - python>=3.6.4
+  - pip
+  - numpy
+  - matplotlib
+  - scikit-learn
+  - jupyter
+  - jupyterlab
+  - ipython
+  - pytest
+  - scipy
+  - scikit-image
+  - pytorch>=1.7.1=py3.8_cuda10.2.89_cudnn7.6.5_0
+  - torchvision
+  - pip:
+    - deepwave
