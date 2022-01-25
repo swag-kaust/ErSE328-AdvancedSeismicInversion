@@ -108,7 +108,7 @@ class fwi():
        increase = 0
        tol = 1e-4
    
-       smoothing = GaussianSmoothing(1,kernel_size=5,sigma=[smth[0],smth[1]],dim=2).to(device)
+       smoothing = GaussianSmoothing(1,kernel_size=30,sigma=[smth[0],smth[1]],dim=2).to(device)
 
 
        # updates is the output file
@@ -137,19 +137,28 @@ class fwi():
         #     plt.colorbar()
         #     plt.show()
 
-           model.grad = smoothing(model.grad)
+           model.grad =  model.grad * msk *  model.detach().clone().pow(3) #  mask - mul bt v**3 
+           model.grad = smoothing(model.grad) * msk
+           if itr == 0 : gmax0 = (torch.abs(model.grad)).max() # get max of first itr 
+           model.grad = model.grad / gmax0   # normalize by max of first iteration  
+            
            
            ####see the gradient
-#            if itr%5 ==0 :
-#             gmin, gmax = np.percentile(model.grad.cpu().numpy(), [2,98])
-#             plt.figure(figsize=(10,3))
-#             plt.imshow(model.grad.cpu().numpy(),cmap='seismic',vmin=gmin,vmax=gmax)
-#             plt.title('gradient')
-#             plt.colorbar()
-#             plt.show()
+           if itr%5 ==0 :
+            gmin, gmax = np.percentile(model.grad.cpu().numpy(), [2,98])
+            plt.figure(figsize=(10,3))
+            plt.imshow(model.grad.cpu().numpy(),cmap='bwr',vmin=gmin,vmax=gmax)
+            plt.title('gradient')
+            plt.colorbar()
+            plt.show()
+            
+            mmin, mmax = np.percentile(model.detach().clone().cpu().numpy(), [2,98])
+            plt.figure(figsize=(10,3))
+            plt.imshow(model.detach().clone().cpu().numpy(),cmap='jet',vmin=mmin,vmax=mmax)
+            plt.title('gradient')
+            plt.colorbar()
+            plt.show()
 
-        #    model.grad = self.grad_smooth(model,smth[1],smth[0]).to(device)
-           model.grad =  self.grad_reg(model,mask=msk)
 
    
            optimizer.step()   
@@ -162,12 +171,12 @@ class fwi():
                  updates.append(model.detach().clone().cpu().numpy()) 
 
            # stopping criteria 
-           if np.abs(loss_iter[itr] - loss_iter[itr-1])/max(loss_iter[itr],loss_iter[itr-1]) < tol and itr>20: 
+           if np.abs(loss_iter[itr] - loss_iter[itr-1])/max(loss_iter[itr],loss_iter[itr-1]) < tol and itr>5: 
                t_end = time.time()
                print('Runtime in min :',(t_end-t_start)/60)  
                updates.append(model.detach().clone().cpu().numpy()) 
                return np.array(updates),loss_iter
-           elif min_loss < loss_iter[itr] and itr > 20: 
+           elif min_loss < loss_iter[itr] and itr > 5: 
               increase +=1
            else: 
               increase = 0
@@ -190,8 +199,6 @@ class fwi():
                m =  model.detach().clone().cpu()
                gradient = model.grad.cpu().numpy() 
                gradient *= m.numpy()**3
-               # for the tv BP and pluto, try .5 and 5
-               # for the gsmoth BP, try 3, 10
                gradient = gaussian_filter1d(gradient,sigma=sigmaz,axis=0) # z
                gradient = gaussian_filter1d(gradient,sigma=sigmax,axis=1) # x 
                gradient = torch.tensor(gradient)
@@ -202,11 +209,11 @@ class fwi():
                # m =  model.detach().clone().cpu()
                        
                gradient = model.grad
-               
+               gradient = gradient * mask
+                
                gmax     = (torch.abs(gradient)).max() 
                gradient = gradient / gmax  # normalize the gradient 
                
-               gradient = gradient * mask
 
                return gradient
             
