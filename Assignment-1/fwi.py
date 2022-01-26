@@ -74,6 +74,7 @@ class fwi():
 
     def forward_modelling(self,model,wavelet,device):
        # pml_width parameter control the boundry, for free surface first argument should be 0 
+#        prop = deepwave.scalar.Propagator({'vp': model.to(device)}, self.dx,pml_width=[0,20,20,20,20,20])
        prop = deepwave.scalar.Propagator({'vp': model.to(device)}, self.dx,pml_width=[0,20,20,20,20,20])
 #                                           survey_pad=[None, None, 200, 200])
        data = prop(wavelet.to(device), self.s_cor.to(device), self.r_cor.to(device), self.dt).cpu()
@@ -88,8 +89,8 @@ class fwi():
        wavelet = wavelet.to(device)
        msk = torch.from_numpy(msk).float().to(device)
        model.requires_grad=True 
-       m_max = model.max()
-       m_min = model.min()
+       m_max = 4.5
+       m_min = 1.5
 
        data_t_max,_ = data_t.max(dim=0,keepdim=True)
        data_t_norm = data_t / (data_t_max.abs() + 1e-10)
@@ -137,7 +138,8 @@ class fwi():
         #     plt.colorbar()
         #     plt.show()
 
-           model.grad =  model.grad * msk *  model.detach().clone().pow(3) #  mask - mul bt v**3 
+#            model.grad =  model.grad * msk *  model.detach().clone().pow(3) #  mask * mul bt v**3 
+           model.grad =  model.grad * msk #  mask 
            model.grad = smoothing(model.grad) * msk
            if itr == 0 : gmax0 = (torch.abs(model.grad)).max() # get max of first itr 
            model.grad = model.grad / gmax0   # normalize by max of first iteration  
@@ -155,7 +157,7 @@ class fwi():
             mmin, mmax = np.percentile(model.detach().clone().cpu().numpy(), [2,98])
             plt.figure(figsize=(10,3))
             plt.imshow(model.detach().clone().cpu().numpy(),cmap='jet',vmin=mmin,vmax=mmax)
-            plt.title('gradient')
+            plt.title('model update')
             plt.colorbar()
             plt.show()
 
