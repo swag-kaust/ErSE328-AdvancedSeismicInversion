@@ -12,4 +12,10 @@ To do this, type in your terminal:
 `conda env create -f Deepwave.yml`
 
 # Assignments 
-
+Assignment #  | Due date
+------------- | -------------
+Assignment 1  | 
+Assignment 2  | 
+Assignment 3  | 
+Assignment 4  | 
+Assignment 5  | 
