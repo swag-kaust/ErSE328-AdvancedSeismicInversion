@@ -1,7 +1,7 @@
 # ErSE328-AdvancedSeismicInversion
 This repo contains exercises for the course (ErSE328-Advanced Seismic Inversion). 
 
-![Alt text](inversion_example.gif) / ![](inversion_example.gif)
+![Alt text](inversion_example.gif) 
 
 ### Getting started 
 [Deepwave](git@github.com:alaliaa/ErSE328-AdvancedSeismicInversion.git) is used as the inversion code in these notebook.
