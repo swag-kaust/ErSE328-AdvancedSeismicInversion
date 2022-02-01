@@ -1,7 +1,7 @@
 # Assignment 1 
 In this assignment, we will run FWI on the Marmousi model. 
 
-You can download the marmousi model from here 
+The marmousi model is provided in the file **Marm.bin**
 
 Use the notebook to perform the following tasks 
 
