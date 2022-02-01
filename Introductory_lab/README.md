@@ -10,7 +10,8 @@ A simple code for training a model using pytorch consists of defining:
  2. optimizer 
  3. criterion 
  4. training loop 
-A code example is below:
+ 
+A normal training example is below:
 
 ```python
 import torch
@@ -36,7 +37,7 @@ for epoch in range(num_epoch):
 The same workflow applies in Deepwave_FWI except we need to define the forward pass (In normal pytorch training, this is defined inside the network class). The forward pass in our case is a wavefield propegator. Thus the above code become like: 
 
 ```python
-# Training loop 
+# Inversion (training) loop 
 for epoch in range(num_epoch):
   for batch in range(num_batch):
      prop = deepwave.scalar.Propagator({'vp': model}, dx)  # since the model is changing we redefine the propegator every batch
