@@ -20,10 +20,10 @@ This repo contains exercises for the course (ErSE328-Advanced Seismic Inversion)
 
 
 # Assignments 
-Assignment #  | Due date
-------------- | -------------
-Assignment 1  | 
-Assignment 2  | 
-Assignment 3  | 
-Assignment 4  | 
-Assignment 5  | 
+Assignment #  | Due date     | Note
+------------- | -------------| ------------
+[Assignment 1](./Assignment1)  | 
+Assignment 2  |              |
+Assignment 3  |              |
+Assignment 4  |              |
+Assignment 5  |              |
