@@ -16,12 +16,15 @@ This repo contains exercises for the course (ErSE328-Advanced Seismic Inversion)
 
 `conda env create -f Deepwave.yml`
 
+3- Activate the environment by running: 
 
+`conda activate deepwave`
 
 
 # Assignments 
 Assignment #  | Due date     | Note
 ------------- | -------------| ------------
+[Introductory Lab](./Introductory_lab)|   2-2-2022
 [Assignment 1](./Assignment1)  | 
 Assignment 2  |              |
 Assignment 3  |              |
