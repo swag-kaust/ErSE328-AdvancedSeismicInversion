@@ -10,7 +10,7 @@ This repo contains exercises for the course (ErSE328-Advanced Seismic Inversion)
 
  1-  clone this repo to your machine by typing in your terminal: 
 
-`git clone git@github.com:alaliaa/ErSE328-AdvancedSeismicInversion.git`
+`git clone git@github.com:swag-kaust/ErSE328-AdvancedSeismicInversion.git`
 
 2- inside the clone directory run the below command to install deepwave: 
 
