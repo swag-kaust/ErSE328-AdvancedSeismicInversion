@@ -6,7 +6,7 @@ We assume you have some knowledge in coding with pytorch as deepwave is built us
 
 # Deepwave FWI and pytorch training 
 A simple code for training a model using pytorch consists of defining: 
- 1. model
+ 1. Network model
  2. optimizer 
  3. criterion 
  4. training loop 
@@ -17,13 +17,13 @@ A normal training example is below:
 import torch
 
 # Define the model 
-model = Netowrk(some_parameters>)
+model = Netowrk()
 
 # Define the criterion 
 criterion = torch.nn.MSELoss()
 
 #Define the optimizer
-optimizer = torch.optim.Adam(lr=0.0001)
+optimizer = torch.optim.Adam(lr=0.001)
 
 # Training loop 
 for epoch in range(num_epoch):
@@ -34,7 +34,7 @@ for epoch in range(num_epoch):
      optimizer.step() # update the model 
 ```
 
-The same workflow applies in Deepwave_FWI except we need to define the forward pass (In normal pytorch training, this is defined inside the network class). The forward pass in our case is a wavefield propegator. Thus the above code become like: 
+The same workflow applies in Deepwave_FWI except we need to define the forward pass (In normal pytorch training, this is defined inside the network class). The forward pass in our case is a wavefield propegator. Thus, the above code becomes: 
 
 ```python
 # Inversion (training) loop 
