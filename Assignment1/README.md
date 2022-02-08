@@ -13,7 +13,7 @@ Tasks:
 Try to improve the inversion result by applying a slight smoothing to the gradient. 
 
 2. Apply the inversion using different initial model (i.e. different smoothing) and observe the convergence.   
-3. Filter out frequencies below 5 Hz and observe the convergence 
+3. Apply a heavy smoothing to the initial model (maybe double the smoothing in the original notebook), then impliment FWI with and without filtering out frequencies below 7 Hz and observe the difference.
 
 For each of the above tasks, explain your observation and the reason for the convergence behavior.  
 
