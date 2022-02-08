@@ -1,8 +1,6 @@
 # Assignment 1 
 In this assignment, we will run FWI on the Marmousi model given below: 
-
 ![Alt text](True_model.png) 
-
 
 The marmousi model is provided in the file **Marm.bin**
 
@@ -10,9 +8,7 @@ Use the notebook to perform the following tasks
 
 Tasks:  
 1. Running the notebook without any modification should yield the following inversion result
-
 ![Alt text](Inverted_model.png) 
-
 
 Try to improve the inversion result by applying a slight smoothing to the gradient. 
 
