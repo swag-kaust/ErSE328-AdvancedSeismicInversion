@@ -25,8 +25,8 @@ This repo contains exercises for the course (ErSE328-Advanced Seismic Inversion)
 Assignment #  | Due date     | Note
 ------------- | -------------| ------------
 [Introductory Lab](./Introductory_lab)| 2-2-2022
-[Assignment 1](./Assignment1)  | 17-2-2022
-Assignment 2  |              |
+[Assignment 1](./Assignment1)  | 19-2-2022
+Assignment 2  |              | 3-3-2022 
 Assignment 3  |              |
 Assignment 4  |              |
 Assignment 5  |              |
