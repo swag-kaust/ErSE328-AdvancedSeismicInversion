@@ -5,6 +5,4 @@ __pycache__/
 
 
 # I/o files 
-*.npy
-
 *png
