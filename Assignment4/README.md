@@ -24,6 +24,6 @@ The TV regularization reads:
 
 ### Tasks: 
 1. Use the notebook (a) to apply conventional FWI on a layered model with an anomaly. Then, apply the inversion with Tikhonov regulurization and total variation. Compare the results and comments on the differences between the two regulrizations. What is the role of <img src="https://latex.codecogs.com/png.image?\dpi{110}\alpha" title="https://latex.codecogs.com/png.image?\dpi{110}\alpha" /> and how you chose it ? 
-2. Look into letruture for some novel objective functions that are immune to cycle-skipping, impliment one of them in the second notebook and compare it with the conventional L2 objective. (bonus: shows the convexity of the objective function and compare it with L2 )
+2. Look into letruture for some novel objective functions that are immune to cycle-skipping, impliment one of them in notebook (b) and compare it with the conventional L2 objective. (bonus: shows the convexity of the objective function and compare it with L2 )
 
      
