@@ -1,28 +1,30 @@
-# Assignment 4  
+# Assignment 5
 
-In this assignment we will impliment a regularized FWI. 
-For an ill-posed optimization problem such as FWI, regularization often help to impose some known feature to the inversion, such as smoothness, blockness ... etc.   
+In this assignment we will impliment a similtanious linear/non-linear inversion. 
+ 
 
-The objective function for a regularized inversion has the form, 
+The objective function for FWI is non-linear and is written as:
 
-<img src="https://latex.codecogs.com/png.image?\dpi{110}J(m)&space;=\left\|d^{obs}&space;-&space;F(m)&space;\right\|&space;&plus;&space;\alpha&space;&space;\mathbf{R}" title="https://latex.codecogs.com/png.image?\dpi{110}J(m) =\left\|d^{obs} - F(m) \right\| + \alpha \mathbf{R}" />, 
+<img src="https://latex.codecogs.com/svg.image?J(m)&space;=&space;\left\|L(m)&space;-&space;d^{obs}&space;\right\|" title="https://latex.codecogs.com/svg.image?J(m) = \left\|L(m) - d^{obs} \right\|" />
 
-where <img src="https://latex.codecogs.com/png.image?\dpi{110}\alpha" title="https://latex.codecogs.com/png.image?\dpi{110}\alpha" />  is a coefficient controling the tradeoff between the objectives and **R** represents the regularization.  
+where F indicates the wave-equation operator. Here, the relation between F and the model (m) is non-linear.
 
-In this assignment we will impliment two regularizations that are Tikhonov and total variation (TV). The formula for Tikhonov is: 
+Using the Born modelling, instead of the wave-equation, we can update the high-wavenumber components of the model (aka model perturbation) using the objective: 
 
-<img src="https://latex.codecogs.com/png.image?\dpi{110}R_{TV}&space;=&space;\left\|&space;L&space;\mathbf{m}&space;\right\|^2_2&space;" title="https://latex.codecogs.com/png.image?\dpi{110}R_{TV} = \left\| L \mathbf{m} \right\|^2_2 " />, 
+<img src="https://latex.codecogs.com/svg.image?J(\delta&space;m)\left\|L(m)&space;-&space;d^{obs}&space;\right\|" title="https://latex.codecogs.com/svg.image?J(\delta m)\left\|L(m) - d^{obs} \right\|" />
 
-where L is designed to penalize the function. In our assignment we will chose L to be the first order derivative. 
+Where L represents the Born modelling operator. The relationship between the Born modelling and the model perturbation (<img src="https://latex.codecogs.com/svg.image?\delta&space;m" title="https://latex.codecogs.com/svg.image?\delta m" />) is linear, hence the linearized inversion.
 
-The TV regularization reads: 
 
-<img src="https://latex.codecogs.com/png.image?\dpi{110}R_{TV}&space;=&space;\left\|&space;&space;\nabla&space;\mathbf{m}&space;\right\|_1&space;" title="https://latex.codecogs.com/png.image?\dpi{110}R_{TV} = \left\| \nabla \mathbf{m} \right\|_1 " />
+The two inversion can be combined and implimented similtaniously by estimating the model perturbation update at each nonlinear iteration:
+
+<img src="https://latex.codecogs.com/svg.image?m&space;=&space;m_o&space;&plus;&space;\delta&space;m" title="https://latex.codecogs.com/svg.image?m = m_o + \delta m" />
+
+
 
 
 
 
 ### Tasks: 
-1. Use the notebook (a) to apply conventional FWI on a layered model with an anomaly. Then, apply the inversion with Tikhonov regulurization and total variation. Compare the results and comment on the differences between the two regulrizations. What is the role of alpha? and how you chose it ?
-2. Look into literature for some novel objective functions that are immune to cycle-skipping, implement one of them in the notebook (b) and compare it with the conventional L2 objective. (bonus: show the convexity of the objective function and compare it with L2 )
-     
+1. Use the notebook to impliment the simitanous linear/non-linear inversion.
+2. Compare with applying only the non-linear inversion (FWI) in terms of accuracy, cost/speed. 
