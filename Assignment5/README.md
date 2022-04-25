@@ -11,9 +11,9 @@ where F indicates the wave-equation operator. Here, the relation between F and t
 
 Using the Born modelling, instead of the wave-equation, we can update the high-wavenumber components of the model (aka model perturbation) using the objective: 
 
-<img src="https://latex.codecogs.com/svg.image?J(\delta&space;m)\left\|L(m)&space;-&space;d^{obs}&space;\right\|" title="https://latex.codecogs.com/svg.image?J(\delta m)\left\|L(m) - d^{obs} \right\|" />
+<img src="https://latex.codecogs.com/svg.image?J(m)&space;=&space;\left\|&space;Lm&space;-&space;d^{obs}\right\|" title="https://latex.codecogs.com/svg.image?J(m) = \left\| Lm - d^{obs}\right\|" />
 
-Where L represents the Born modelling operator. The relationship between the Born modelling and the model perturbation (<img src="https://latex.codecogs.com/svg.image?\delta&space;m" title="https://latex.codecogs.com/svg.image?\delta m" />) is linear, hence the linearized inversion. (P.S. deepwave contains the Born operator.)
+Where L represents the Born modelling operator. The relationship between the Born modelling and the model perturbation and the model (m) is linear, hence the linearized inversion. (P.S. deepwave contains the Born operator.)
 
 
 The two inversion can be combined and implimented similtaniously by estimating the model perturbation update at each nonlinear iteration:
