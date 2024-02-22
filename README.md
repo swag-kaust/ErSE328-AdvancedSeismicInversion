@@ -20,4 +20,4 @@ conda activate erse328asi
 # Assignments 
 Assignment #  | Due date     | Objectives
 ------------- | -------------| ------------
-[Assignmnet 0](./00_introduction) | Making sure the Deepwave installed properly.
+[Assignmnet 0](./00_introduction) | TBD | Making sure the Deepwave installed properly.
