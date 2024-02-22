@@ -14,11 +14,10 @@ It will take some time, but if, in the end, you see the word `Done!` on your ter
 
 Remember to always activate the environment by typing:
 ```
-conda activate diffefwi
+conda activate erse328asi
 ```
 
 # Assignments 
 Assignment #  | Due date     | Objectives
 ------------- | -------------| ------------
 [Assignmnet 0](./00_introduction) | Making sure the Deepwave installed properly.
-[Assignment 1](./01_initial)  | TBD | Understanding the sensitivity of the inversion with regard to the initial model.
