@@ -1,32 +1,24 @@
-# ErSE328-AdvancedSeismicInversion
-This repo contains exercises for the course (ErSE328-Advanced Seismic Inversion). An inversion example is shown below:
+![erse328asi](logo.png)
 
-![Alt text](inversion_example.gif) 
+This repo contains materials for the course ErSE328 Advanced Seismic Inversion course taught by Professor Tariq Alkhalifah in King Abdullah University of Science. An inversion example is shown below:
 
-# Getting started 
+# Getting started :space_invader: :robot:
 
-[Deepwave](https://git@github.com:alaliaa/ErSE328-AdvancedSeismicInversion.git) is used as the inversion code in these notebooks. Please refer to the page for function documentation. It also contains a nice [FWI notebook](https://git@github.com:alaliaa/ErSE328-AdvancedSeismicInversion.git). We recommend using the **Deepwave.yml** file included in this page to install Deepwave. To do so, please follow the steps below 
+Throughout the computational part of the course, we will mainly be utilizing the Deepwave Python library which you can access from their [repository](https://git@github.com:alaliaa/ErSE328-AdvancedSeismicInversion.git). To get yourself started, you can directly learn the Deepwave fundamentals from their [documentations](https://ausargeo.com/deepwave/).
 
+To install the environment, run the following command:
+```
+./install_env.sh
+```
+It will take some time, but if, in the end, you see the word `Done!` on your terminal, you are ready to go. 
 
-1-  Using your terminal clone this repo to your machine by typing: 
-
-`git clone git@github.com:swag-kaust/ErSE328-AdvancedSeismicInversion.git`
-
-2- Inside the clone directory run the below command to install deepwave: 
-
-`conda env create -f Deepwave.yml`
-
-3- Activate the environment by running: 
-
-`conda activate deepwave`
-
+Remember to always activate the environment by typing:
+```
+conda activate diffefwi
+```
 
 # Assignments 
-Assignment #  | Due date     | Note
+Assignment #  | Due date     | Objectives
 ------------- | -------------| ------------
-[Introductory Lab](./Introductory_lab) | N/A
-[Assignment 1](./Assignment1)  | 28-2-2023
-[Assignment 2](./Assignment2)  | TBD | 
-[Assignment 3](./Assignment3)  | TBD |
-[Assignment 4](./Assignment4)  | TBD |
-[Assignment 5](./Assignment5)  | TBD |
+[Assignmnet 0](./00_introduction) | Making sure the Deepwave installed properly.
+[Assignment 1](./01_initial)  | TBD | Understanding the sensitivity of the inversion with regard to the initial model.
