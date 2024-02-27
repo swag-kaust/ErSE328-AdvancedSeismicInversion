@@ -5,7 +5,7 @@
 # Run: ./install_env.sh
 
 # Create conda env
-source ~/miniconda3/etc/profile.d/conda.sh
+source ~/anaconda3/etc/profile.d/conda.sh 2>/dev/null || source ~/miniconda3/etc/profile.d/conda.sh
 conda env create -f environment.yml
 conda activate erse328asi
 conda env list
