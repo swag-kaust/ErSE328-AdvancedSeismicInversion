@@ -30,13 +30,13 @@ Then, clone this repository and install the `erse328asi` conda environment. If i
 sbatch erse328asi_notebook.slurm
 ```
 
-Connect from your workstation to access the notebook with the instruction from the output slurm job. The file is in the format of `slurm-JOBID.out`.
+You can connect from your workstation to access the notebook with the instructions from the output slurm job. The file is in the format of `slurm-JOBID.out`.
 
 ```
-ssh -L 6789:GPU-ID:6789 USERNAME@glogin.ibex.kaust.edu.sa
+ssh -L 6789:GPUID:6789 USERNAME@glogin.ibex.kaust.edu.sa
 ```
 
-where the `JOBID` and `GPUID` are the unique identifiers from the slurm output job request.
+where the `JOBID` and `GPUID` are the unique identifiers from the slurm output job request. Then, access the `http://localhost:6789/` link from your workstation and fill in the credential from the `slurm-JOBID.out`.
 
 # Assignments 
 Assignment #  | Due date     | Objectives
