@@ -27,7 +27,7 @@ ssh USERNAME@glogin.ibex.kaust.edu.sa
 Then, clone this repository and install the `erse328asi` conda environment. If it is installed please go ahead with the following command. If not, please refer to this [documentation](https://docs.anaconda.com/free/miniconda/) to install conda. Inside the `ErSE328-AdvancedSeismicInversion` folder, run the following command to submit the slurm jupyter notebook request.
 
 ```
-sbatch erse328asi_notebook
+sbatch erse328asi_notebook.slurm
 ```
 
 Connect from your workstation to access the notebook with the instruction from the output slurm job. The file is in the format of `slurm-JOBID.out`.
