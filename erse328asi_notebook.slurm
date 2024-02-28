@@ -14,7 +14,5 @@ submit_host=${SLURM_SUBMIT_HOST}
 port=6789
 echo $node pinned to port $port 
 
-ssh -L ${port}:${node}:${port} ${user}@glogin.ibex.kaust.edu.sa 
-
 # Run Jupyter 
 jupyter-notebook --no-browser --port=${port} --port-retries=50 --ip=${node}
