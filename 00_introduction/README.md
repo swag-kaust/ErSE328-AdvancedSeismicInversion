@@ -6,4 +6,4 @@ In this assignment, the objective is making sure you can properly create the con
 
 # Outcomes
 
-Share the modified (hopefully well annotated) notebook (or Python script) to mohammad.taufik@kaust.edu.sa with ErSE328-A0 as the subject.
+Share the modified (hopefully well annotated) notebook (or Python script) to mohammad.taufik@kaust.edu.sa with `ErSE328-A0` as the subject.

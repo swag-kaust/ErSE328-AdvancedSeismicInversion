@@ -41,4 +41,5 @@ where the `JOBID` and `GPUID` are the unique identifiers from the slurm output j
 # Assignments 
 Assignment #  | Due date     | Objectives
 ------------- | -------------| ------------
-[Assignment 0](./00_introduction) | TBD | Ensure the Deepwave package is installed properly.
+[Assignment 0](./00_introduction) | 04/03/2024 | Ensure the Deepwave package is installed properly.
+[Assignment 1](./01_marmousi) | 07/03/2024 | Perform FWI to the Marmousi and suggest ways to improve the results.
