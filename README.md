@@ -8,7 +8,7 @@ Throughout the computational part of the course, we will mainly be utilizing the
 
 To install the environment, run the following command:
 ```
-./install_env.sh
+sh install_env.sh
 ```
 It will take some time, but if, in the end, you see the word `Done!` on your terminal, you are ready to go. 
 
