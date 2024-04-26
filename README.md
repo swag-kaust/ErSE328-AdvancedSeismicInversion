@@ -44,3 +44,5 @@ Assignment #  | Due date     | Objectives
 [Assignment 0](./00_introduction) | 04/03/2024 | Ensure the Deepwave package is installed properly.
 [Assignment 1](./01_marmousi) | 07/03/2024 | Perform FWI to the Marmousi and suggest ways to improve the results.
 [Assignment 2](./02_multiscale) | 24/03/2024 | Perform multiscale FWI to improve the results.
+[Assignment 3](./03_regularization) | 05/05/2024 | Remedy the ill-posedness of FWI using regularization.
+[Assignment 4](./04_multiparameter) | 05/05/2024 | Moving beyond acoustic media assumption.
